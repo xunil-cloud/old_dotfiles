@@ -14,6 +14,7 @@ call vundle#begin()
 Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
 
@@ -47,7 +48,24 @@ set wildmenu   " display completion matches in a status line
 " map and autocmd
 noremap <C-n> :NERDTreeToggle<CR> 
 map <leader>sv :source $MYVIMRC<CR>
+map <leader>d :let g:gitgutter_git_args='--git-dir=$HOME/dotfiles/ --work-tree=$HOME'<CR>
 
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_include_dirs = ["JuceLibraryCode/modules"]
+
+" start of default statusline
+set statusline=%<%f\ %h%w%m%r\ 
+
+" Syntastic statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" end of default statusline (with ruler)
+set statusline+=%=%-25.(%y\ %l/%L,%c%V%)\ %P

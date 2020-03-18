@@ -14,6 +14,7 @@ source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
 export EDITOR='vim'
+export PATH="$HOME/.cargo/bin:$PATH"
 
 alias la="ls -al"
 alias dwav="youtube-dl --audio-format wav -x"

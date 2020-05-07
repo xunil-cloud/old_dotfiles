@@ -48,7 +48,7 @@ set wildmenu   " display completion matches in a status line
 " map and autocmd
 noremap <C-n> :NERDTreeToggle<CR> 
 map <leader>sv :source $MYVIMRC<CR>
-map <leader>d :let g:gitgutter_git_args='--git-dir=$HOME/dotfiles/ --work-tree=$HOME'<CR>
+map <leader>d :let g:gitgutter_git_args='--git-dir=$HOME/.dotfiles/ --work-tree=$HOME'<CR>
 
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 autocmd WinEnter * setlocal cursorline

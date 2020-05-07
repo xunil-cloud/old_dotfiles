@@ -21,10 +21,10 @@ window:
 # Font configuration
 font:
   normal:
-    family: Terminus (TTF)
+    family: Hack
     style: Regular
   bold:
-    family: Terminus (TTF)
+    family: Hack
     style: Bold
 
   # Italic font face
@@ -39,7 +39,7 @@ font:
   size: 16.0
   offset:
     x: 0
-    y: 3
+    y: 0
 
 # Colors 
 colors:

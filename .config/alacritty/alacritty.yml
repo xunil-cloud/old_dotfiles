@@ -44,6 +44,10 @@ font:
     x: 0
     y: 0
 
+# cursor
+cursor:
+  style: Beam
+
 # Colors 
 colors:
   primary:
